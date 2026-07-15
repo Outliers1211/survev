@@ -135,13 +135,6 @@ export class PlayerBarn {
         this.playerStatusRate = net.getPlayerStatusUpdateRate(this.game.map.factionMode);
     }
 
-    randomPlayer(player?: Player) {
-        const livingPlayers = player
-            ? this.livingPlayers.filter((p) => p != player)
-            : this.livingPlayers;
-        return livingPlayers[util.randomInt(0, livingPlayers.length - 1)];
-    }
-
     addPlayer(
         client: Client,
         joinMsg: net.JoinMsg,
